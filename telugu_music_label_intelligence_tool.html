@@ -1,0 +1,790 @@
+<h2 
+    class="sr-only">Telugu music label intelligence tool — label dashboard, revenue gap calculator, and Strategy Intelligence Assistant built by Vikruti Srija
+</h2>
+<span style="
+background:#2a2a2a;
+color:#b3b3b3;
+padding:5px 12px;
+border-radius:999px;
+font-size:11px;
+display:inline-block;
+margin-top:8px;
+">
+Version 1.0 • Product Strategy Prototype
+</span>
+<link 
+   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
+   rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telugu Music Label Intelligence | Product Strategy Dashboard</title>
+
+<meta name="description" content="Interactive dashboard exploring Telugu music label growth, revenue opportunities, creator ecosystems, and market intelligence.">
+
+<meta name="keywords" content="Telugu music, music labels, Aditya Music, Mango Music, Lahari Music, Saregama, product strategy, music industry">
+
+<meta name="author" content="Vikruti Srija">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .sr-only{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    border:0;
+}
+  .chat-bubble-ai{
+    background:#1f1f1f;
+    border:1px solid #333;
+    border-radius:12px 12px 12px 4px;
+    padding:10px 14px;
+    max-width:82%;
+    font-size:13px;
+    line-height:1.6;
+    color:white;
+    white-space:pre-wrap;
+}
+
+.chat-bubble-user{
+    background:#0f2d44;
+    border:1px solid #333;
+    border-radius:12px 12px 4px 12px;
+    padding:10px 14px;
+    max-width:82%;
+    font-size:13px;
+    line-height:1.6;
+    color:white;
+}
+body{
+    background:#121212;
+    color:white;
+    font-family:'Inter',sans-serif;
+    margin:0;
+    padding:30px;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Inter,Segoe UI,sans-serif;
+    background:#121212;
+    color:white;
+    padding:30px;
+}
+
+.tab-btn{
+    background:#1e1e1e;
+    border:1px solid #333;
+    color:white;
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-right:10px;
+    transition:.3s;
+}
+
+.tab-btn:hover{
+    background:#2b2b2b;
+}
+
+.tab-btn.active{
+    background:#242424;
+    border-color:#555;
+}
+
+.metric-card{
+    background:#1f1f1f;
+    border-radius:14px;
+    padding:16px;
+    border:1px solid #2d2d2d;
+}
+
+.label-card{
+    background:#222;
+    border:1px solid #3a3a3a;
+    border-radius:16px;
+    padding:20px;
+    transition:.3s;
+}
+.label-card{
+transition:0.2s ease;
+}
+
+.label-card:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 24px rgba(0,0,0,0.25);
+}
+.label-card:hover{
+    transform:translateY(-3px);
+    border-color:#555;
+}
+
+.stat-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.bar-bg{
+    background:#2c2c2c;
+    border-radius:999px;
+    height:8px;
+    overflow:hidden;
+}
+
+.quick-btn{
+    background:#2a2a2a;
+    border:none;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+input{
+    background:#1e1e1e;
+    border:1px solid #444;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+}
+
+button{
+    background:#2d2d2d;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#3a3a3a;
+}
+
+h1,h2,h3{
+    color:white;
+}
+
+small{
+    color:#999;
+}
+@media (max-width:768px){
+
+body{
+    padding:15px;
+}
+
+#header-section{
+    flex-direction:column !important;
+    gap:12px;
+}
+
+#tabs{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.tab-btn{
+    width:100%;
+    margin-right:0;
+}
+
+.stat-grid{
+    grid-template-columns:1fr !important;
+}
+
+#tab-calculator input{
+    width:100%;
+}
+
+#tab-calculator div[style*="display:flex; gap:8px"]{
+    flex-direction:column;
+}
+
+#tab-chat div[style*="display:flex; gap:8px"]{
+    flex-direction:column;
+}
+
+#chat-input{
+    width:100%;
+}
+
+h1{
+    font-size:28px !important;
+}
+
+.chat-bubble-ai,
+.chat-bubble-user{
+    max-width:95%;
+}
+
+}
+</style>
+
+<div style="max-width:1200px;width:100%;margin:auto;">
+
+  <div id="header-section" style="display:flex; justify-content:space-between; align-items:flex-start; padding-bottom:1rem; border-bottom:0.5px solid #333; margin-bottom:1.25rem;">
+    <div>
+      <div style="font-size:38px; 
+                  font-weight:700; 
+                  color:#ffffff; 
+                  margin-bottom:12px;">
+      Telugu Music Label Intelligence</div>
+      <div style="font-size:16px; 
+                  color:#b3b3b3; 
+                  margin-bottom:20px;">
+      Built by <span style="font-weight:500;">Vikruti Srija</span> · Growth strategist & product thinker</div>
+    </div>
+    <span style="background:#E1F5EE; color:#085041; font-size:10px; padding:3px 10px; border-radius:999px; font-weight:500; white-space:nowrap;">Free · no login</span>
+  </div>
+
+  <div style="border-bottom:1px solid #333333; margin-bottom:40px; padding-bottom:20px;" id="tabs">
+    <button class="tab-btn active" onclick="switchTab('dashboard', this)"><i class="ti ti-chart-bar" aria-hidden="true"></i>Label dashboard</button>
+    <button class="tab-btn" onclick="switchTab('calculator', this)"><i class="ti ti-calculator" aria-hidden="true"></i>Revenue calculator</button>
+    <button class="tab-btn" onclick="switchTab('chat', this)"><i class="ti ti-message" aria-hidden="true"></i>Strategy Intelligence Assistant
+    </button>
+  </div>
+
+  <div id="tab-dashboard">
+    <p style="font-size:13px; color:#b3b3b3; margin:0 0 1.25rem;">Leading music labels relevant to the Telugu market — public data comparison</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:12px; margin-bottom:1.5rem;" id="label-cards"></div>
+    <div style="background:#1f1f1f; border:0.5px solid #333; border-radius:16px; padding:1.25rem;">
+      <div style="font-size:13px; font-weight:500; color:#b3b3b3; margin-bottom:1rem;">YouTube subscriber comparison</div>
+      <div id="bar-chart"></div>
+      <p style="font-size:11px; color:#b3b3b3; font-style:italic; margin:1rem 0 0;"> Subscriber counts are based on publicly visible YouTube channel data. Additional metrics may include industry estimates and are provided for strategic exploration, product thinking, and educational analysis only.
+</p>
+    </div>
+  </div>
+
+  <div id="tab-calculator" style="display:none;">
+    <p style="font-size:13px; color:#b3b3b3; margin:0 0 1.25rem;">Estimate your label's uncaptured revenue potential based on YouTube subscribers</p>
+    <div style="background:#1f1f1f; border:0.5px solid #333; border-radius:16px; padding:1.25rem; margin-bottom:1.25rem;">
+      <div style="font-size:13px; color:#b3b3b3; margin-bottom:8px;">YouTube channel subscribers</div>
+      <div style="display:flex; gap:8px; margin-bottom:12px;">
+        <input type="number" id="subs-input" placeholder="e.g. 19000000" style="flex:1;" />
+        <button onclick="runCalc()" style="
+background:#3a3a3a;
+color:white;
+border:none;
+padding:14px 24px;
+border-radius:12px;
+font-weight:600;
+font-family:Inter, sans-serif;
+cursor:pointer;
+">
+Calculate ↗
+</button>
+      </div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap;">
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='1000000'">1M</button>
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='8720000'">8.72M (Mango)</button>
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='63800000'">
+63.8M (Saregama)
+</button>
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='19000000'">19M (Lahari)</button>
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='36000000'">36M (Aditya)</button>
+      </div>
+    </div>
+    <div id="calc-results" style="display:none;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:1.25rem;">
+<div class="metric-card">
+  <div style="font-size:11px; color:#b3b3b3; margin-bottom:4px;">
+    Est. ad revenue today
+  </div>
+
+  <div id="r-current" style="font-size:32px; font-weight:700;">
+    —
+  </div>
+
+  <div style="font-size:10px; color:#b3b3b3; margin-top:2px;">
+    YouTube ads only
+  </div>
+</div>
+        <div class="metric-card">
+          <div style="font-size:11px; color:#b3b3b3; margin-bottom:4px;">Total uncaptured potential</div>
+          <div style="font-size:20px; font-weight:500; color:#0F6E56;" id="r-total">—</div>
+          <div style="font-size:10px; color:#b3b3b3; margin-top:2px;">3 untapped streams</div>
+        </div>
+      </div>
+      <div id="opp-cards"></div>
+      <p style="font-size:11px; color:#b3b3b3; font-style:italic; text-align:center; margin-top:1rem;">Illustrative estimates for strategic planning · not guarantees · built by Vikruti Srija</p>
+    </div>
+  </div>
+
+  <div id="tab-chat" style="display:none;">
+    <p style="font-size:13px; color:#b3b3b3; margin:0 0 1.25rem;">Strategy Intelligence Assistant for Telugu music label growth · built by Vikruti Srija</p>
+    <div style="
+font-size:12px;
+color:#b3b3b3;
+margin-top:6px;
+margin-bottom:12px;
+">
+Knowledge-powered strategy assistant built for Telugu music label growth, revenue expansion, creator ecosystems, and fan monetization.
+</div>
+    <div id="chat-box" style="background:#1f1f1f; border:0.5px solid #333; border-radius:16px; padding:1rem; height:320px; overflow-y:auto; margin-bottom:12px; display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; justify-content:flex-start;">
+        <div class="chat-bubble-ai">Welcome. I'm a Telugu music strategy AI built by Vikruti Srija.
+<div style="
+margin-top:12px;
+font-size:12px;
+color:#b3b3b3;
+line-height:1.8;
+">
+Suggested questions:<br>
+
+• How can Mango Music grow revenue?<br>
+
+• What creator program should Aditya Music launch?<br>
+
+• How can labels monetize superfans?<br>
+
+• Biggest opportunity in Telugu music?<br>
+
+</div>
+Ask me anything about growing a Telugu music label — revenue models, creator programs, brand partnerships, digital strategy. I'll give you specific, actionable answers.</div>
+      </div>
+    </div>
+    
+    <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px;">
+      <button class="quick-btn" onclick="setQ('How can Mango Music increase direct fan revenue?')">Mango Music revenue ideas</button>
+      <button class="quick-btn" onclick="setQ('What creator program should Aditya Music launch?')">Creator program for Aditya</button>
+      <button class="quick-btn" onclick="setQ('How to pitch brand deals to Telugu labels with data?')">Brand deals strategy</button>
+      <button class="quick-btn" onclick="setQ('What is the biggest growth gap in Telugu music right now?')">Biggest growth gap</button>
+    </div>
+    <div style="display:flex; gap:8px;">
+      <input type="text" id="chat-input" placeholder="Ask about Telugu music label growth strategy..." style="flex:1;" onkeydown="if(event.key==='Enter') sendChat()" />
+      <button onclick="sendChat()" id="send-btn" style="padding:0 18px; font-weight:500; font-family:Inter, sans-serif;">Send ↗</button>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem; padding-top:1rem; border-top:0.5px solid #333; display:flex; justify-content:space-between; align-items:center;">
+<span style="font-size:11px; color:#b3b3b3;">
+Built by Vikruti Srija ·
+<a href="https://linkedin.com/in/vikruti-srija-648738285" target="_blank" rel="noopener noreferrer" style="color:#4EA1FF;">LinkedIn</a>
+·
+<a href="https://github.com/vikrutisrija" target="_blank" rel="noopener noreferrer" style="color:#4EA1FF;">GitHub</a>
+</span>    <span style="font-size:11px; color:#b3b3b3;">Data from public sources · 2026
+<br>
+<span style="font-size:10px;color:#888;">
+Last updated: June 2026
+</span></span>
+  </div>
+</div>
+
+<script>
+const LABELS = [
+  {
+    name: "Aditya Music",
+    badge: "Market Leader",
+    subs: 36600000,
+    subsLabel: "36.6M",
+    views: "~36B+",
+    founded: 1990,
+    albums: "2,500+",
+    langs: "Telugu, Tamil, Kannada, Hindi",
+    verified: false,
+    source: "Public YouTube channel data",
+    borderColor: "#0F6E56",
+    bgColor: "#E1F5EE",
+    textColor: "#085041"
+  },
+
+  {
+    name: "Lahari Music",
+    badge: "South India Leader",
+    subs: 19200000,
+    subsLabel: "19.2M",
+    views: "N/A",
+    founded: 1989,
+    albums: "1,000+",
+    langs: "Telugu, Kannada, Tamil",
+    verified: false,
+    source: "YouTube channel data (approx.)",
+    borderColor: "#185FA5",
+    bgColor: "#E6F1FB",
+    textColor: "#0C447C"
+  },
+
+ {
+  name: "Saregama Music",
+  badge: "Industry Benchmark",
+  subs: 63800000,
+  subsLabel: "63.8M",
+  views: "N/A",
+  founded: 1901,
+  albums: "Large Catalogue",
+  langs: "Telugu, Hindi, Tamil, Kannada, Bengali & More",
+  verified: false,
+  source: "YouTube subscriber count",
+  borderColor: "#8B5CF6",
+  bgColor: "#F3E8FF",
+  textColor: "#6B21A8"
+},
+
+  {
+    name: "Mango Music",
+    badge: "Telugu Digital Challenger",
+    subs: 8720000,
+    subsLabel: "8.72M",
+    views: "N/A",
+    founded: 2006,
+    albums: "500+",
+    langs: "Telugu",
+    verified: false,
+    source: "YouTube channel data (approx.)",
+    borderColor: "#BA7517",
+    bgColor: "#FAEEDA",
+    textColor: "#854F0B"
+  }
+];
+
+function renderCards() {
+  const c = document.getElementById('label-cards');
+  c.innerHTML = LABELS.map(l => `
+    <div class="label-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;">
+        <div>
+          <div style="font-size:14px;font-weight:600;margin-bottom:10px;">${l.name}</div>
+          <span style="background:${l.bgColor};color:${l.textColor};font-size:10px;padding:4px 10px;border-radius:999px;font-weight:500;">${l.badge}</span>
+        </div>
+        ${!l.verified ? `<span style="font-size:10px;color:#b3b3b3;background:#2a2a2a;padding:4px 10px;border-radius:999px;"></span>` : ''}
+      </div>
+      <div class="stat-grid" style="margin-bottom:10px;">
+        <div class="metric-card"><div style="font-size:10px;color:#b3b3b3;margin-bottom:2px;">YT subscribers</div><div style="font-size:14px;font-weight:500;">${l.subsLabel}</div></div>
+        <div class="metric-card"><div style="font-size:10px;color:#b3b3b3;margin-bottom:2px;">Total YT views</div><div style="font-size:14px;font-weight:500;">${l.views}</div></div>
+        <div class="metric-card"><div style="font-size:10px;color:#b3b3b3;margin-bottom:2px;">Founded</div><div style="font-size:14px;font-weight:500;">${l.founded}</div></div>
+        <div class="metric-card"><div style="font-size:10px;color:#b3b3b3;margin-bottom:2px;">Albums</div><div style="font-size:14px;font-weight:500;">${l.albums}</div></div>
+      </div>
+      <div style="font-size:11px;color:#b3b3b3;">Languages: ${l.langs}</div>
+      <div style="font-size:10px;color:#b3b3b3;opacity:0.6;margin-top:3px;">Source: ${l.source}</div>
+    </div>
+  `).join('');
+}
+function renderBars() {
+  const b = document.getElementById('bar-chart');
+
+  const sorted = [...LABELS].sort((a,b) => b.subs - a.subs);
+
+  const max = sorted[0].subs;
+
+  b.innerHTML = sorted.map(l => `
+    <div style="margin-bottom:14px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+        <span style="font-size:12px;">${l.name}</span>
+        <span style="font-size:12px;font-weight:500;color:${l.borderColor};">
+          ${l.subsLabel}
+        </span>
+      </div>
+
+      <div class="bar-bg">
+        <div style="
+          background:${l.borderColor};
+          width:${(l.subs/max)*100}%;
+          height:100%;
+          border-radius:999px;
+        "></div>
+      </div>
+    </div>
+  `).join('');
+}
+function fmtINR(n) {
+  n = Math.round(n);
+  if(n>=10000000) return '₹' + (n/10000000).toFixed(1) + 'Cr/mo';
+  if(n>=100000) return '₹' + (n/100000).toFixed(1) + 'L/mo';
+  if(n>=1000) return '₹' + Math.round(n/1000) + 'K/mo';
+  return '₹' + n + '/mo';
+}
+
+function runCalc() {
+  const s = parseInt(document.getElementById('subs-input').value) || 0;
+  if(s < 10000) return;
+  const ad = Math.round((s * 3 / 1000) * 50);
+  const fan = Math.round(s * 0.005 * 99);
+  const brand = Math.round((s / 1000000) * 500000);
+  const creator = Math.round((s / 1000000) * 200000);
+  const total = fan + brand + creator;
+
+  document.getElementById('r-current').textContent = fmtINR(ad);
+  document.getElementById('r-total').textContent = fmtINR(total);
+
+  const opps = [
+    { title:"Direct fan membership", val:fan, color:"#0F6E56", bg:"#E1F5EE", tc:"#085041", basis:"0.5% of subscribers × ₹99/month fan club", action:"Launch YouTube memberships or a fan subscription. Offer early song access, behind-the-scenes content, one annual online fan event." },
+    { title:"Data-backed brand partnerships", val:brand, color:"#185FA5", bg:"#E6F1FB", tc:"#0C447C", basis:"Based on audience scale and regional targeting value", action:"Package your audience demographics into a pitch deck. Walk into brand meetings with data — not just a logo rate card." },
+    { title:"Creator partner program", val:creator, color:"#854F0B", bg:"#FAEEDA", tc:"#633806", basis:"Traffic and promotion value from a licensed creator network", action:"License music to vetted Telugu creators in exchange for brand mentions, audience data, and first-release amplification." }
+  ];
+
+  document.getElementById('opp-cards').innerHTML = opps.map(o => `
+    <div style="background:#1f1f1f;border:1.5px solid ${o.color};border-radius:16px;padding:1.25rem;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+        <div>
+          <div style="font-size:14px;font-weight:500;">${o.title}</div>
+          <div style="font-size:11px;color:#b3b3b3;margin-top:2px;">${o.basis}</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:18px;font-weight:500;color:${o.color};">${fmtINR(o.val)}</div>
+          <div style="font-size:10px;color:#b3b3b3;">potential</div>
+        </div>
+      </div>
+      <div style="background:${o.bg};border-radius:12px;padding:10px 12px;">
+        <span style="font-size:11px;color:${o.tc};font-weight:500;">How: </span>
+        <span style="font-size:11px;color:${o.tc};">${o.action}</span>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('calc-results').style.display = 'block';
+}
+
+function switchTab(id, btn) {
+  ['dashboard','calculator','chat'].forEach(t => {
+    document.getElementById('tab-'+t).style.display = t===id ? 'block' : 'none';
+  });
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function setQ(q) {
+  document.getElementById('chat-input').value = q;
+  document.getElementById('chat-input').focus();
+}
+
+function addBubble(role, text) {
+  const box = document.getElementById('chat-box');
+  const wrap = document.createElement('div');
+  wrap.style.cssText = `display:flex;justify-content:${role==='user'?'flex-end':'flex-start'};`;
+  const bubble = document.createElement('div');
+  bubble.className = role==='user' ? 'chat-bubble-user' : 'chat-bubble-ai';
+  bubble.textContent = text;
+  wrap.appendChild(bubble);
+  box.appendChild(wrap);
+  box.scrollTop = box.scrollHeight;
+  return bubble;
+}
+
+const KNOWLEDGE = [
+
+{
+keywords:["mango","revenue","money","grow"],
+answer:`Mango Music's biggest growth opportunities:
+
+• YouTube Memberships
+• Exclusive fan communities
+• Early-access song releases
+• Regional brand partnerships
+
+Priority:
+
+1. Fan Memberships
+2. Creator Program
+3. Brand Deals
+
+Potential impact:
+₹20L–₹50L monthly revenue opportunity.`
+},
+
+{
+keywords:["aditya","creator"],
+answer:`Aditya Music should launch a Creator Partner Program.
+
+Benefits:
+
+• More organic song discovery
+• Stronger creator relationships
+• Increased short-form video usage
+
+Strategy:
+
+Provide licensed music access to selected Telugu creators in exchange for promotion and audience insights.`
+},
+
+{
+keywords:["lahari"],
+answer:`Lahari Music's opportunity lies in building stronger fan communities and creator ecosystems.
+
+Focus areas:
+
+• Telugu creator partnerships
+• Fan memberships
+• Exclusive content
+• Artist storytelling
+
+Goal:
+
+Convert passive listeners into active communities.`
+},
+
+{
+keywords:["opportunity","growth gap","biggest opportunity"],
+answer:`The biggest growth opportunity in Telugu music is direct fan monetization.
+
+Most labels rely on:
+
+• Streaming revenue
+• YouTube advertising
+
+Few labels have:
+
+• Paid memberships
+• Fan subscriptions
+• Creator ecosystems
+
+Labels that build direct fan relationships will have a significant advantage over the next five years.`
+},
+
+{
+keywords:["saregama"],
+answer:`Saregama Music can strengthen its Telugu presence through:
+
+• Regional artist partnerships
+• Telugu playlist strategy
+• Creator collaborations
+• Short-form video campaigns
+
+Advantage:
+
+Strong catalogue plus strong brand trust.`
+},
+
+{
+keywords:["brand","partnership"],
+answer:`Data-backed brand partnerships are one of the largest untapped opportunities.
+
+Recommendations:
+
+• Build audience reports
+• Create demographic dashboards
+• Package listener insights
+• Sell audience access, not just sponsorships`
+},
+
+{
+keywords:["fan","membership","community"],
+answer:`Fan monetization is one of the strongest growth opportunities.
+
+Ideas:
+
+• YouTube Memberships
+• Fan-only content
+• Early-access releases
+• Behind-the-scenes content
+• Exclusive livestreams`
+},
+
+{
+keywords:["telugu","market"],
+answer:`Telugu music is among India's strongest digital music ecosystems.
+
+Key opportunities:
+
+• Creator-led discovery
+• Regional brand partnerships
+• Fan monetization
+• Community building
+
+Biggest gap:
+
+Converting listeners into paying superfans.`
+},
+{
+keywords:["youtube","growth","subscribers"],
+answer:`To grow YouTube subscribers:
+
+• Increase Shorts output
+• Collaborate with creators
+• Create artist-led content
+• Build playlist ecosystems
+• Use release countdown campaigns`
+},
+
+{
+keywords:["shorts","reels"],
+answer:`Short-form video is the strongest music discovery channel today.
+
+Recommendations:
+
+• Provide creator-friendly audio clips
+• Launch trend challenges
+• Partner with Telugu influencers
+• Track reuse rates`
+},
+
+{
+keywords:["artist","artists"],
+answer:`Labels should invest in artist brands, not just songs.
+
+Focus:
+
+• Personal storytelling
+• Community building
+• Live interaction
+• Consistent content publishing`
+}
+
+];
+
+function sendChat(){
+
+const inp=document.getElementById('chat-input');
+
+const msg=inp.value.trim();
+
+if(!msg) return;
+
+inp.value='';
+
+addBubble('user',msg);
+
+const lower=msg.toLowerCase();
+
+let reply=null;
+
+for(const item of KNOWLEDGE){
+
+if(item.keywords.some(k=>lower.includes(k))){
+
+reply=item.answer;
+
+break;
+
+}
+
+}
+
+if(!reply){
+
+reply=`I can help with:
+
+• Mango Music growth strategy
+• Aditya Music creator programs
+• Lahari Music growth plans
+• Saregama Music opportunities
+• Fan memberships
+• Brand partnerships
+• Telugu music market insights
+
+Try asking a more specific question.`;
+
+}
+
+const thinking = addBubble('assistant','Thinking...');
+
+setTimeout(()=>{
+thinking.textContent = reply;
+},800);
+
+}
+
+
+renderCards();
+renderBars();
+</script>
