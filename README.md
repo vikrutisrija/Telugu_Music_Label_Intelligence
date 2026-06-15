@@ -42,6 +42,14 @@ However, many discussions focus primarily on streaming and advertising revenue.
 
 This project explores what becomes possible when labels think beyond views and streams and start building direct fan relationships, creator ecosystems, and new revenue models.
 
+# Telugu Music Label Intelligence
+
+🌐 Live Demo:
+https://vikrutisrija.github.io/Telugu_Music_Label_Intelligence/
+
+📂 GitHub Repository:
+https://github.com/vikrutisrija/Telugu_Music_Label_Intelligence
+
 ## Built By
 
 Vikruti Srija
