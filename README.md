@@ -1,57 +1,93 @@
 # Telugu Music Label Intelligence
 
-A product strategy and market intelligence prototype built to explore growth opportunities in the Telugu music ecosystem.
+A product strategy and market intelligence prototype exploring growth opportunities, audience monetization, and revenue innovation in the Telugu music ecosystem.
 
-## What this project does
+## 🌐 Live Demo
+
+https://vikrutisrija.github.io/Telugu_Music_Label_Intelligence/
+
+## 🚀 Overview
+
+Telugu Music Label Intelligence is an independent product strategy project designed to explore how music labels can better understand audience value, monetization opportunities, creator ecosystems, and long-term growth.
+
+The platform combines market intelligence, revenue modeling, and strategy exploration tools into a single experience.
+
+---
+
+## 📊 Features
 
 ### Label Dashboard
 
-Compare leading music labels relevant to the Telugu market including Aditya Music, Lahari Music, Saregama Music, and Mango Music through publicly visible channel data, catalogue insights, and market positioning.
+Compare major music labels relevant to the Telugu market using publicly visible channel data, catalogue insights, and market positioning.
 
-### Revenue Opportunity Calculator
+Current labels include:
 
-Estimate potential revenue opportunities beyond advertising.
+* Aditya Music
+* Lahari Music
+* Saregama Music
+* Mango Music
 
-Enter a label's subscriber count and explore potential opportunities across:
+### 💰 Revenue Opportunity Calculator
+
+Explore potential monetization opportunities beyond advertising revenue.
+
+Estimate opportunities across:
 
 * Fan memberships
-* Brand partnerships
 * Creator partner programs
+* Brand partnerships
+* Community-driven monetization
 
-The goal is to help labels visualize untapped monetization opportunities.
-
-### Strategy Intelligence Assistant
+### 🧠 Strategy Intelligence Assistant
 
 A knowledge-powered strategy assistant focused on Telugu music label growth.
 
-Ask questions about:
+Explore topics such as:
 
+* Audience monetization
 * Revenue growth
-* Fan monetization
 * Creator ecosystems
 * Brand partnerships
-* Telugu music market opportunities
+* Digital strategy
+* Music industry opportunities
 
-and receive strategy-focused recommendations instantly.
+---
 
-## Why I Built This
+## 🎯 Why I Built This
 
-I believe Telugu music labels are sitting on valuable digital assets, audiences, and communities.
+Music labels have built massive digital audiences.
 
-However, many discussions focus primarily on streaming and advertising revenue.
+However, many industry conversations remain focused primarily on streaming and advertising revenue.
 
-This project explores what becomes possible when labels think beyond views and streams and start building direct fan relationships, creator ecosystems, and new revenue models.
+This project explores what becomes possible when labels think beyond views and streams and begin building direct fan relationships, creator ecosystems, and new monetization models.
 
-# Telugu Music Label Intelligence
+---
 
-🌐 Live Demo:
-https://vikrutisrija.github.io/Telugu_Music_Label_Intelligence/
+## 🛠 Technology
 
-📂 GitHub Repository:
-https://github.com/vikrutisrija/Telugu_Music_Label_Intelligence
+* HTML
+* CSS
+* JavaScript
+* GitHub Pages
 
-## Built By
+---
+
+## 👤 Creator
 
 Vikruti Srija
 
 Growth Strategy • Product Thinking • Music Industry Innovation
+
+LinkedIn:
+https://linkedin.com/in/vikruti-srija-648738285
+
+GitHub:
+https://github.com/vikrutisrija
+
+---
+
+## ⚠ Disclaimer
+
+Subscriber counts are based on publicly visible YouTube channel data.
+
+Other metrics may include illustrative estimates intended for product strategy exploration, educational analysis, and market discussion. They should not be treated as financial forecasts or business advice.
