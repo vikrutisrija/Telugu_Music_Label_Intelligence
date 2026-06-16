@@ -8,7 +8,11 @@ https://vikrutisrija.github.io/Telugu_Music_Label_Intelligence/
 
 ## 📸 Screenshot
 
-![Telugu Music Label Intelligence](screenshot.png)
+![Dashboard](dashboard.png)
+
+![Revenue Calculator](revenue-calculator.png)
+
+![Strategy Assistant](strategy-assistant.png)
 
 ## 🚀 Overview
 
