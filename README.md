@@ -6,6 +6,10 @@ A product strategy and market intelligence prototype exploring growth opportunit
 
 https://vikrutisrija.github.io/Telugu_Music_Label_Intelligence/
 
+## 📸 Screenshot
+
+![Telugu Music Label Intelligence](screenshot.png)
+
 ## 🚀 Overview
 
 Telugu Music Label Intelligence is an independent product strategy project designed to explore how music labels can better understand audience value, monetization opportunities, creator ecosystems, and long-term growth.
